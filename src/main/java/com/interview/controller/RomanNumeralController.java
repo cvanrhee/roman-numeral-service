@@ -16,25 +16,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/romannumeral")
 public class RomanNumeralController {
 
-  private Logger log = LoggerFactory.getLogger(RomanNumeralController.class);
+  private Logger log = LoggerFactory.getLogger(this.getClass());
 
-  private final IConversionService romanNumeralService;
+  private final IConversionService conversionService;
 
   @Autowired
-  public RomanNumeralController(IConversionService romanNumeralService){
-    this.romanNumeralService = romanNumeralService;
+  public RomanNumeralController(IConversionService conversionService) {
+    this.conversionService = conversionService;
   }
 
+  /**
+   * Converts all numbers between min and max into their corresponding Roman Numeral.
+   * @param min start of query
+   * @param max end of query
+   * @return {@link BatchConversionResponse} of all the conversions.
+   */
   @GetMapping
-  public ResponseEntity<BatchConversionResponse> convertRange(@RequestParam(value = "min") int min, @RequestParam(value = "max") int max) throws Exception {
+  public ResponseEntity<BatchConversionResponse> convertRange(
+      @RequestParam(value = "min") int min, @RequestParam(value = "max") int max) throws Exception {
     if (min > max) {
-     throw new InvalidQueryRangeException("Max number greater than min numbers");
+      throw new InvalidQueryRangeException("Max number greater than min numbers");
     }
 
     if (min < 1 || max > 3999) {
-      throw new InvalidQueryRangeException("Invalid query range. Numbers must be between 1 and 3999");
+      throw new InvalidQueryRangeException(
+          "Invalid query range. Numbers must be between 1 and 3999");
     }
 
-    return ResponseEntity.ok(this.romanNumeralService.convertRange(min, max));
+    return ResponseEntity.ok(this.conversionService.convertRange(min, max));
   }
 }
