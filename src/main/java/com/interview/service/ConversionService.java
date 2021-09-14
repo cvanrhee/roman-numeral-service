@@ -2,14 +2,21 @@ package com.interview.service;
 
 import com.interview.dto.BatchConversionResponse;
 import com.interview.model.Conversion;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+/**
+ * Service is used to create and manage conversion jobs. This was created due of limitations with
+ * Spring calling @Async from the same class.
+ *
+ * <p>@see <a
+ * href="https://stackoverflow.com/questions/12967896/converting-integers-to-roman-numerals-java">Referenced
+ * this for the conversion to Roman Numerals</a>
+ */
 @Service
 public class ConversionService implements IConversionService {
 
@@ -21,7 +28,7 @@ public class ConversionService implements IConversionService {
   }
 
   /**
-   * Method the kicks off async conversions for every number between start and end
+   * Method the kicks off async conversions for every number between start and end.
    *
    * @param start of range.
    * @param end of range
@@ -44,4 +51,3 @@ public class ConversionService implements IConversionService {
     return new BatchConversionResponse(conversions);
   }
 }
-

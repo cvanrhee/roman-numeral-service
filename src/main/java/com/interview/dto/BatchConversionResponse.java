@@ -5,8 +5,7 @@ import com.interview.model.Conversion;
 import java.util.List;
 
 /**
- * <p>DTO to wrap a batch of conversions.
- *
+ * DTO to wrap a batch of conversions.
  */
 public class BatchConversionResponse {
   private List<Conversion> conversions;

@@ -1,7 +1,7 @@
 package com.interview.model;
 
 /**
- * <p> Holds a Number to RomanNumeral conversion.
+ * Holds a Number to RomanNumeral conversion.
  */
 public class Conversion {
   private int input;
