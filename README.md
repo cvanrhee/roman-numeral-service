@@ -77,9 +77,19 @@ Api takes an integer or a range between `1-3999` and asynchronously converts it 
 
 ## Executing program
 
+### Mac
 - Run the app using the gradle wrapper: 
 ```
 ./gradlew bootRun
+```
+### Windows
+
+```
+gradlew.bat bootRun
+```
+and then 
+```
+gradlew bootRun
 ```
 
 You can also import the project into your IDE and run the ```com.interview.Application.java``` 
@@ -89,9 +99,18 @@ You can also import the project into your IDE and run the ```com.interview.Appli
 
 You can run the tests with gradle using
 
+### Mac
+
 ``` 
 ./gradlew test 
 ```
+
+### Windows
+
+```
+gradlew test
+```
+
 
 or run the tests using the IDE of your choice
 
