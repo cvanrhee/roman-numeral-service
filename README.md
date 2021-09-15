@@ -103,7 +103,7 @@ You can run the tests with gradle using
 ### Windows
 
 ```
-gradlew test
+gradlew clean test --info
 ```
 
 
