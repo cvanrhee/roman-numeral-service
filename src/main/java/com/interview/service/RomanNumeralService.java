@@ -1,6 +1,6 @@
 package com.interview.service;
 
-import com.interview.dto.ConversionResponse;
+import com.interview.domain.dto.ConversionResponse;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.CompletableFuture;

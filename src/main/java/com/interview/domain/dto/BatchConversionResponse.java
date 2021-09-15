@@ -1,4 +1,4 @@
-package com.interview.dto;
+package com.interview.domain.dto;
 
 import java.util.List;
 
