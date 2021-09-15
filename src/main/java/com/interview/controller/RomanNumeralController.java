@@ -26,14 +26,16 @@ public class RomanNumeralController {
   }
 
   /**
-   * Converts all numbers between min and max into their corresponding Roman Numeral.
-   * @param min start of query
+   * Converts all numbers between min and max into their corresponding Roman Numeral. Ò
+   *
    * @param max end of query
    * @return {@link BatchConversionResponse} of all the conversions.
    */
   @GetMapping
   public ResponseEntity<BatchConversionResponse> convertRange(
-      @RequestParam(value = "min") int min, @RequestParam(value = "max") int max) throws Exception {
+      @RequestParam(value = "min", required = false) Integer min,
+      @RequestParam(value = "max", required = false) Integer max) {
+    
     if (min > max) {
       throw new InvalidQueryRangeException("Max number greater than min numbers");
     }

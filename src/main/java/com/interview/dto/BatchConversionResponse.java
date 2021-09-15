@@ -1,20 +1,18 @@
 package com.interview.dto;
 
-import com.interview.model.Conversion;
-
 import java.util.List;
 
 /**
  * DTO to wrap a batch of conversions.
  */
 public class BatchConversionResponse {
-  private List<Conversion> conversions;
+  private List<ConversionResponse> conversions;
 
-  public BatchConversionResponse(List<Conversion> conversions) {
+  public BatchConversionResponse(List<ConversionResponse> conversions) {
     this.conversions = conversions;
   }
 
-  public List<Conversion> getConversions() {
+  public List<ConversionResponse> getConversions() {
     return this.conversions;
   }
 }
