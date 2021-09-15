@@ -1,6 +1,6 @@
 package com.interview.service;
 
-import com.interview.model.Conversion;
+import com.interview.domain.dto.ConversionResponse;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.CompletableFuture;
@@ -43,7 +43,7 @@ public class RomanNumeralService {
   }
 
   /**
-   * Converts an int into a {@link Conversion}. Will first check in-memory cache for value before
+   * Converts an int into a {@link ConversionResponse}. Will first check in-memory cache for value before
    * running conversion.
    *
    * @throws IllegalArgumentException if the number is not between 1-3999
@@ -51,7 +51,7 @@ public class RomanNumeralService {
    * @return {@link CompletableFuture} with idx to Roman Numeral
    */
   @Async
-  public CompletableFuture<Conversion> convertIndex(int idx) {
+  public CompletableFuture<ConversionResponse> convertIndex(int idx) {
     if (idx < 1 || idx > 3999) {
       return CompletableFuture.failedFuture(
           new IllegalArgumentException("Number not within range of 1 and 3999"));
@@ -63,7 +63,7 @@ public class RomanNumeralService {
       cache.put(idx, value);
     }
 
-    return CompletableFuture.completedFuture(new Conversion(idx, value));
+    return CompletableFuture.completedFuture(new ConversionResponse(idx, value));
   }
 
   /**
