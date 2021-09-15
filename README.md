@@ -102,3 +102,10 @@ If you are using Intellij, you can format your code using the [intellij-java-goo
 ## Authors
 
 Caleb Van Rhee
+
+# Upcoming:
+- Dockerfile
+- Metrics 
+- Logging to side-car
+- CI/CD
+
