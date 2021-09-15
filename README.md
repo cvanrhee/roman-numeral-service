@@ -83,11 +83,6 @@ Api takes an integer or a range between `1-3999` and asynchronously converts it 
 ./gradlew bootRun
 ```
 ### Windows
-
-```
-gradlew.bat bootRun
-```
-and then 
 ```
 gradlew bootRun
 ```
