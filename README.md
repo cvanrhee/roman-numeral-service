@@ -95,7 +95,7 @@ You can run the tests with gradle using
 
 or run the tests using the IDE of your choice
 
-![img.png](assets/test example.png)
+[img.png](assets/test example.png)
 
 ## Code layout
 Code is formatted to the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
