@@ -15,7 +15,7 @@ Api takes an integer or a range between `1-3999` and asynchronously converts it 
 2. Import into your IDE of choice and [execute](#Executing program)
 
 ## Endpoints:
-###Converting Roman Numeral
+### Converting Roman Numeral
 
 * **URL:** /romannumeral
 * **Method:**
@@ -41,7 +41,7 @@ Api takes an integer or a range between `1-3999` and asynchronously converts it 
     "path": "/romannumeral"
     }`
 
-###Swagger Json
+### Swagger Json
 
 * **URL:** /v2/api-docs
 * **Method:**
@@ -50,7 +50,7 @@ Api takes an integer or a range between `1-3999` and asynchronously converts it 
 * **Success Response:**
     * **Code:** 200 <br />
 
-###Health Check:
+### Health Check:
 
 * **URL:** /actuator/health/
 * **Method:**
